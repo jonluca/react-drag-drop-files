@@ -2,13 +2,15 @@ import esbuild from 'esbuild';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import pkg from './package.json' assert { type: 'json' };
+import { createRequire } from 'module';
 import browserslist from 'browserslist';
 import glob from 'glob';
 import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
+const pkg = require('./package.json');
 const target = resolveToEsbuildTarget(
   browserslist(pkg.browserslist.production),
   {
