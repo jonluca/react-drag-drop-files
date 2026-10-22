@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: ["26.12.1"]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -41,7 +41,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: ["26.12.1"]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
